@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var Calculator_1 = require("./Classes/Calculator");
+var Animal_1 = require("./Classes/Animal");
 var Program = /** @class */ (function () {
     function Program() {
     }
@@ -17,6 +18,14 @@ var Program = /** @class */ (function () {
         console.log("mul:: " + output);
         output = calc.div(num1, num2);
         console.log("div:: " + output);
+        var objCow = new Animal_1.Cow();
+        objCow.greet();
+        objCow.eat();
+        objCow.makeSound();
+        var objLion = new Animal_1.Lion();
+        objLion.greet();
+        objLion.eat();
+        objLion.makeSound();
     };
     ;
     return Program;
