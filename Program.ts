@@ -3,6 +3,7 @@ import {ICalcultor} from './Interfaces/ICalculator';
 import {IAnimal} from './Interfaces/IAnimal';
 import {Calculator} from './Classes/Calculator';
 import {Animal, Lion, Cow} from './Classes/Animal';
+import {Main} from './Namespaces/Main';
 
 class Program{
 
@@ -10,7 +11,7 @@ class Program{
 
         var num1:number=9;
         var num2:number=7;
-        var output:number=7;
+        var output:number;
 
         var calc:ICalcultor = new Calculator();
 
@@ -35,6 +36,11 @@ class Program{
         objLion.greet();
         objLion.eat();
         objLion.makeSound();
+
+        Main.greet();
+
+        var obj:Main.IUtilities = new Main.Utilities();
+        obj.greet();
 
     };
 
