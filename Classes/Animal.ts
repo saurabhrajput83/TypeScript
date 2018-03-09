@@ -1,20 +1,23 @@
 
 import {IAnimal} from './../Interfaces/IAnimal';
+import {AnimalType} from './../Enums/Enums';
 
 export class Animal implements IAnimal{
 
     private _name:string;
     private _food:string;
     private _sound:string;
+    private _type:AnimalType;
 
-    constructor(name:string, food:string, sound:string){
+    constructor(name:string, food:string, sound:string, type:AnimalType){
         this._name= name;
         this._food=food;
         this._sound=sound;
+        this._type=type;
     };
 
     greet():void{
-        console.log("Hello i am "+this._name);
+        console.log("Hello i am "+this._name+" and i am a "+(<AnimalType>this._type).toString());
     };
 
     eat():void{
@@ -30,7 +33,7 @@ export class Animal implements IAnimal{
 export class Cow extends Animal {
 
     constructor(){
-        super("Cow", "Grass", "Moo");
+        super("Cow", "Grass", "Moo", AnimalType.Harbivorous);
     };
 
 };
@@ -38,7 +41,7 @@ export class Cow extends Animal {
 export class Lion extends Animal {
 
     constructor(){
-        super("Lion", "Flesh", "Roar");
+        super("Lion", "Flesh", "Roar", AnimalType.Carnivorous);
     };
 
 };

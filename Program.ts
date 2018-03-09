@@ -11,11 +11,17 @@ class Program{
 
         var num1:number=9;
         var num2:number=7;
+        var num3:number=5;
+        var num4:number=3;
         var output:number;
 
         var calc:ICalcultor = new Calculator();
 
         output = calc.add(num1, num2);
+        console.log("add:: "+output);
+        output = calc.add(num1,num2, num3);
+        console.log("add:: "+output);
+        output = calc.add(num1,num2, num3, num4);
         console.log("add:: "+output);
 
         output = calc.sub(num1, num2);

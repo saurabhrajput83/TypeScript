@@ -10,15 +10,17 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
+var Enums_1 = require("./../Enums/Enums");
 var Animal = /** @class */ (function () {
-    function Animal(name, food, sound) {
+    function Animal(name, food, sound, type) {
         this._name = name;
         this._food = food;
         this._sound = sound;
+        this._type = type;
     }
     ;
     Animal.prototype.greet = function () {
-        console.log("Hello i am " + this._name);
+        console.log("Hello i am " + this._name + " and i am a " + this._type.toString());
     };
     ;
     Animal.prototype.eat = function () {
@@ -36,7 +38,7 @@ exports.Animal = Animal;
 var Cow = /** @class */ (function (_super) {
     __extends(Cow, _super);
     function Cow() {
-        return _super.call(this, "Cow", "Grass", "Moo") || this;
+        return _super.call(this, "Cow", "Grass", "Moo", Enums_1.AnimalType.Harbivorous) || this;
     }
     ;
     return Cow;
@@ -46,7 +48,7 @@ exports.Cow = Cow;
 var Lion = /** @class */ (function (_super) {
     __extends(Lion, _super);
     function Lion() {
-        return _super.call(this, "Lion", "Flesh", "Roar") || this;
+        return _super.call(this, "Lion", "Flesh", "Roar", Enums_1.AnimalType.Carnivorous) || this;
     }
     ;
     return Lion;
